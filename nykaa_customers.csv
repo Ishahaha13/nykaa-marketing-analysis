@@ -1,0 +1,101 @@
+CustomerID,Age,Gender,State,SignupDate
+1001,24,Female,Karnataka,2020-10-06
+1002,37,Male,Delhi,2021-05-11
+1003,32,Female,Delhi,2020-10-28
+1004,28,Female,Tamil Nadu,2020-06-29
+1005,25,Female,Karnataka,2021-08-29
+1006,38,Female,West Bengal,2021-11-30
+1007,24,Female,Karnataka,2022-09-19
+1008,43,Female,Tamil Nadu,2020-07-09
+1009,36,Female,Tamil Nadu,2020-09-09
+1010,40,Female,Karnataka,2022-09-07
+1011,28,Female,Tamil Nadu,2022-07-16
+1012,28,Female,Karnataka,2020-05-07
+1013,41,Female,Maharashtra,2020-01-18
+1014,38,Male,Karnataka,2021-07-19
+1015,21,Female,Karnataka,2021-07-23
+1016,25,Male,Tamil Nadu,2021-11-16
+1017,41,Female,Tamil Nadu,2021-09-17
+1018,20,Male,Delhi,2022-05-03
+1019,39,Male,Delhi,2022-08-19
+1020,38,Female,Maharashtra,2020-06-03
+1021,19,Female,Delhi,2021-05-04
+1022,41,Female,Karnataka,2022-02-23
+1023,29,Female,Tamil Nadu,2020-09-02
+1024,23,Female,Delhi,2022-11-28
+1025,19,Female,Delhi,2022-01-28
+1026,38,Female,Maharashtra,2021-06-21
+1027,18,Female,Maharashtra,2022-07-09
+1028,29,Female,Karnataka,2021-02-11
+1029,43,Male,Tamil Nadu,2021-06-08
+1030,39,Male,Maharashtra,2022-04-07
+1031,29,Female,Delhi,2022-06-21
+1032,42,Female,Tamil Nadu,2020-02-05
+1033,34,Female,Tamil Nadu,2021-11-15
+1034,44,Female,Delhi,2020-01-20
+1035,44,Female,Maharashtra,2020-11-16
+1036,27,Female,Delhi,2021-05-26
+1037,33,Female,Tamil Nadu,2021-02-03
+1038,32,Female,West Bengal,2021-10-15
+1039,32,Male,West Bengal,2022-08-29
+1040,36,Female,Karnataka,2021-04-15
+1041,29,Female,Delhi,2022-04-13
+1042,40,Female,Delhi,2021-12-27
+1043,37,Female,Karnataka,2022-05-03
+1044,42,Female,Karnataka,2020-02-20
+1045,20,Female,Karnataka,2021-07-28
+1046,22,Female,Tamil Nadu,2020-05-29
+1047,36,Male,Delhi,2020-11-09
+1048,24,Female,Tamil Nadu,2021-07-23
+1049,38,Female,Karnataka,2020-10-31
+1050,26,Male,Delhi,2021-11-12
+1051,24,Female,Tamil Nadu,2022-04-17
+1052,35,Female,Tamil Nadu,2022-12-13
+1053,21,Female,Karnataka,2022-09-29
+1054,42,Female,Delhi,2021-03-19
+1055,31,Female,Karnataka,2021-09-04
+1056,35,Female,Delhi,2022-09-19
+1057,43,Male,West Bengal,2020-09-20
+1058,26,Female,Maharashtra,2022-12-12
+1059,43,Female,Maharashtra,2022-09-30
+1060,38,Female,Maharashtra,2020-01-05
+1061,19,Male,Karnataka,2022-02-12
+1062,37,Female,West Bengal,2022-05-26
+1063,32,Female,Delhi,2022-09-18
+1064,24,Female,Tamil Nadu,2022-06-02
+1065,29,Female,Delhi,2020-02-16
+1066,25,Female,Tamil Nadu,2022-05-16
+1067,32,Female,Delhi,2022-04-02
+1068,20,Female,West Bengal,2022-07-24
+1069,31,Female,Tamil Nadu,2021-10-17
+1070,34,Female,Karnataka,2020-09-25
+1071,21,Female,Delhi,2021-01-04
+1072,35,Female,Delhi,2021-09-27
+1073,25,Female,Tamil Nadu,2021-10-18
+1074,21,Female,Karnataka,2020-04-29
+1075,19,Female,Karnataka,2022-04-10
+1076,23,Female,West Bengal,2022-12-17
+1077,39,Female,Karnataka,2022-01-10
+1078,27,Female,Karnataka,2020-04-26
+1079,21,Female,Karnataka,2022-03-01
+1080,39,Female,Maharashtra,2022-10-09
+1081,35,Female,West Bengal,2022-12-17
+1082,43,Female,Delhi,2021-09-25
+1083,29,Male,Tamil Nadu,2021-05-27
+1084,19,Female,Delhi,2022-03-12
+1085,27,Male,West Bengal,2021-07-13
+1086,21,Female,Tamil Nadu,2021-05-02
+1087,31,Female,West Bengal,2022-06-15
+1088,33,Female,Karnataka,2021-12-04
+1089,32,Female,Tamil Nadu,2021-08-03
+1090,25,Female,Karnataka,2022-02-28
+1091,31,Female,Delhi,2022-05-10
+1092,40,Female,Delhi,2020-09-03
+1093,42,Female,Tamil Nadu,2020-06-02
+1094,25,Female,Tamil Nadu,2022-09-23
+1095,38,Female,West Bengal,2021-11-27
+1096,33,Female,West Bengal,2022-12-28
+1097,30,Female,Karnataka,2022-12-06
+1098,35,Male,Tamil Nadu,2022-10-05
+1099,32,Female,Delhi,2020-04-03
+1100,38,Male,West Bengal,2022-08-15

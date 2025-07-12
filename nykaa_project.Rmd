@@ -1,0 +1,196 @@
+---
+title: "Nykaa Marketing Analytics"
+author: "Isha Tanwar"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    theme: cosmo
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(kableExtra)
+```
+
+## Project Overview
+
+This project analyzes simulated data from Nykaa, a direct-to-consumer beauty and wellness brand, to evaluate the effectiveness of marketing spend, customer behavior, and product ratings.
+
+Objectives:
+
+1. Understand the impact of marketing spend on orders
+
+2. Identify top-performing customers
+
+3. Analyze correlation between product ratings and sales
+
+4. Evaluate conversion rates and channel performance
+
+## Data Import and Cleaning
+```{r}
+setwd('C:/Users/sujal/OneDrive/Desktop')
+
+# Load datasets
+orders <- read.csv("nykaa_orders.csv") %>% clean_names()
+customers <- read_csv("nykaa_customers.csv") %>% clean_names()
+products <- read_csv("nykaa_products.csv") %>% clean_names()
+marketing <- read_csv("nykaa_marketing.csv") %>% clean_names()
+reviews <- read_csv("nykaa_reviews.csv") %>% clean_names()
+
+# Convert dates
+orders <- orders %>%
+  mutate(order_date = dmy(order_date),
+         order_month = floor_date(order_date,"month"))
+
+marketing <- marketing %>%
+  mutate(marketing_month = ym(month))
+```
+
+## Data Integration
+```{r}
+# Combine all data
+order_details <- orders %>%
+  left_join(customers, by = "customer_id") %>%
+  left_join(products, by = "product_id") %>%
+  left_join(reviews, by = "product_id")
+```
+
+## Top 10 Customers by Order Volume
+```{r}
+top_customers <- orders %>%
+  group_by(customer_id) %>%
+  summarise(TotalOrders = n()) %>%
+  arrange(desc(TotalOrders)) %>%
+  slice_head(n=10)
+
+top_customers_plot <- ggplot(top_customers,mapping = aes
+                             (x = reorder(customer_id,-TotalOrders), 
+                                   y = TotalOrders)) +
+  geom_col(fill = "#519484") +
+  labs(title = "Top 10 Customers by Order Volume", x = "Customer ID", y = "No. of Orders") +
+  theme(panel.background = element_blank())
+top_customers_plot
+```
+
+## Monthly Trend: Marketing Spend vs. Orders
+```{r}
+monthly_marketing <- marketing %>%
+  group_by(marketing_month) %>%
+  summarise(total_spend = sum(spend, na.rm = TRUE),
+            total_conversions = sum(conversions, na.rm = TRUE))
+monthly_orders <- orders %>%
+  group_by(order_month) %>%
+  summarise(TotalOrders = n())
+
+trend_data <- monthly_marketing %>%
+  left_join(monthly_orders, by=c("marketing_month" = "order_month"))
+
+trend_data_graph <- ggplot(trend_data, mapping = aes(x = marketing_month)) +
+  geom_line(aes(y = total_spend, colour = "Marketing Spend")) +
+  geom_point(aes(y = total_spend, colour = "Marketing Spend")) +
+  geom_line(aes(y = TotalOrders*100000, colour = "Total Orders")) +
+  geom_point(aes(y = TotalOrders*100000, colour = "Total Orders")) +
+  scale_y_continuous(name = "Marketing Spend",sec.axis = 
+                       sec_axis(~./100000,name = "Total Orders")) +
+  scale_x_date(date_labels = "%Y-%m-%d", date_breaks = "1 month") +
+  theme(panel.background = element_blank(), 
+        axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(title = "Monthly Trend: Marketing Spend vs Orders", x = "Marketing Month", colour = "Legend") 
+trend_data_graph
+```
+
+## Product Ratings vs. Sales
+```{r}
+product_sales <- orders %>%
+  group_by(product_id) %>%
+  summarise(unit_sales = n())
+
+product_ratings <- reviews %>%
+  group_by(product_id) %>%
+  summarise(avg_rating = mean(rating, na.rm = TRUE))
+ 
+ratings_vs_sales <- product_sales %>%
+  left_join(product_ratings, by = "product_id")
+
+ratings_vs_sales_graph <- ratings_vs_sales %>%
+  ggplot(aes(x = avg_rating, y = unit_sales)) +
+  geom_point(color = "#FF69B4") +
+  geom_smooth(method = "lm", se = FALSE, color = "black") +
+  labs(title = "Do Higher-Rated Products Sell More?", 
+       x = "Average Rating", y = "Units Sold") +
+  theme(panel.background = element_blank())
+ratings_vs_sales_graph
+```
+
+## Monthly Conversion Rate
+```{r}
+trend_data <- trend_data %>%
+  mutate(conversion_rate = total_conversions/total_spend *100)
+trend_data_plot <- ggplot(trend_data, aes(x = marketing_month, y = conversion_rate)) +
+  geom_line(color = "#20B2AA") +
+  geom_point(color = "#20B2AA") +
+  labs(title = "Monthly Conversion Rate from Marketing Campaigns",
+       x = "Month", y = "Conversion Rate") +
+  scale_x_date(date_labels = "%Y-%m-%d", date_breaks = "1 month") +
+  theme(panel.background = element_blank(), 
+        axis.text.x = element_text(angle = 90, hjust = 1))
+trend_data_plot
+```
+
+## Cost per Conversion by Channel
+```{r}
+channel_perf <- marketing %>%
+  group_by(channel) %>%
+  summarise(spend = sum(spend, na.rm=TRUE),
+            conversions = sum(conversions, na.rm=TRUE)) %>%
+  mutate(cpc = spend/conversions) #costperconversion
+
+channel_perf_plot <- channel_perf %>%
+  ggplot(aes(x = reorder(channel,-cpc), y = cpc)) +
+  geom_col(fill = "#845194") +
+  coord_flip() +
+  labs(title = "Cost per Conversion by Channel", x = "Channel", y = "₹ per Conversion") +
+  theme(panel.background = element_blank())
+channel_perf_plot
+```
+
+## Overall KPIs Table
+```{r}
+kpi_table <- trend_data %>% 
+  summarise(`Total Spend (₹M)`      = round(sum(total_spend)/1e6, 2),
+            `Total Conversions`     = sum(total_conversions),
+            `Total Orders`          = sum(TotalOrders),
+            `Overall Conversion %`  = round(sum(total_conversions)/sum(total_spend)*100, 
+                                            1))
+kpi_table %>% 
+  kbl(caption = "Overall Marketing & Sales KPIs") %>% 
+  kable_styling(full_width = FALSE, position = "left")
+```
+
+## Summary Insights
+- Email and Google Ads show the lowest cost per conversion.
+
+- No clear positive correlation found between ratings and units sold.
+
+- Conversion rates fluctuate but peak with increased spend.
+
+- A few customers are contributing to a majority of the orders.
+
+## Conclusion
+This analysis helped identify the relationship between marketing investments and sales outcomes. These insights can support better budget allocation, channel selection, and customer retention strategies for D2C brands like Nykaa.
+
+
+
+
+
+
+
+
+
+
+

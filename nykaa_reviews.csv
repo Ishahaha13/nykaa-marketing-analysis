@@ -1,0 +1,101 @@
+ReviewID,ProductID,Rating,ReviewDate,ReviewText
+2001,520,1,2021-03-04,Amazing product
+2002,501,5,2022-10-24,Value for money
+2003,505,5,2022-10-28,Value for money
+2004,509,3,2021-06-05,Loved it
+2005,517,1,2022-04-14,Okayish
+2006,509,4,2021-02-18,Value for money
+2007,511,2,2021-03-25,Amazing product
+2008,515,2,2021-12-27,Would not recommend
+2009,524,5,2022-11-20,Amazing product
+2010,506,3,2021-05-28,Okayish
+2011,523,2,2022-09-22,Amazing product
+2012,503,1,2021-12-08,Loved it
+2013,530,5,2022-04-21,Okayish
+2014,517,4,2021-03-04,Would not recommend
+2015,505,5,2022-12-02,Loved it
+2016,530,4,2021-12-26,Okayish
+2017,528,5,2022-07-15,Would not recommend
+2018,512,5,2021-11-23,Loved it
+2019,518,5,2021-05-21,Loved it
+2020,514,4,2021-08-03,Okayish
+2021,521,4,2022-03-11,Value for money
+2022,524,5,2022-12-24,Loved it
+2023,511,2,2021-11-14,Loved it
+2024,509,3,2021-02-01,Would not recommend
+2025,502,3,2022-11-01,Amazing product
+2026,512,3,2021-10-12,Okayish
+2027,503,4,2021-11-01,Okayish
+2028,503,4,2022-03-05,Value for money
+2029,501,2,2022-04-22,Value for money
+2030,508,3,2021-10-13,Okayish
+2031,522,3,2021-05-24,Value for money
+2032,528,5,2022-02-28,Would not recommend
+2033,529,4,2021-01-19,Okayish
+2034,508,3,2021-01-18,Value for money
+2035,511,2,2022-08-13,Okayish
+2036,509,2,2022-01-06,Amazing product
+2037,505,3,2021-06-24,Loved it
+2038,514,4,2021-07-13,Okayish
+2039,528,2,2022-05-17,Loved it
+2040,530,5,2021-04-23,Value for money
+2041,503,2,2021-04-24,Loved it
+2042,521,1,2021-08-10,Okayish
+2043,505,1,2022-11-09,Amazing product
+2044,505,4,2022-10-06,Value for money
+2045,519,3,2021-09-21,Okayish
+2046,527,4,2021-02-24,Value for money
+2047,514,4,2022-10-05,Would not recommend
+2048,526,4,2022-04-03,Loved it
+2049,530,4,2021-06-11,Would not recommend
+2050,504,5,2022-01-15,Okayish
+2051,525,5,2021-03-28,Amazing product
+2052,513,2,2021-02-24,Value for money
+2053,510,1,2022-04-21,Loved it
+2054,525,4,2021-06-27,Value for money
+2055,518,2,2022-01-26,Okayish
+2056,508,1,2021-12-15,Value for money
+2057,508,3,2021-01-08,Loved it
+2058,507,5,2021-11-09,Okayish
+2059,508,1,2022-03-19,Value for money
+2060,514,3,2021-11-24,Amazing product
+2061,519,1,2021-02-23,Okayish
+2062,529,5,2021-08-27,Okayish
+2063,506,5,2021-08-17,Amazing product
+2064,501,2,2022-08-02,Would not recommend
+2065,523,4,2021-02-20,Loved it
+2066,515,1,2022-09-01,Would not recommend
+2067,501,1,2022-08-27,Value for money
+2068,525,3,2021-09-21,Amazing product
+2069,517,5,2022-02-22,Would not recommend
+2070,501,1,2021-04-06,Okayish
+2071,515,5,2021-03-29,Value for money
+2072,523,1,2021-03-19,Value for money
+2073,502,2,2021-10-15,Would not recommend
+2074,514,4,2021-04-30,Would not recommend
+2075,521,1,2022-05-06,Amazing product
+2076,508,5,2022-03-28,Loved it
+2077,508,2,2022-05-15,Would not recommend
+2078,519,1,2021-06-14,Would not recommend
+2079,507,3,2021-07-01,Okayish
+2080,519,4,2022-04-14,Value for money
+2081,506,1,2021-01-07,Loved it
+2082,506,2,2021-11-26,Okayish
+2083,503,3,2022-11-04,Amazing product
+2084,507,2,2021-05-31,Amazing product
+2085,519,2,2021-03-26,Would not recommend
+2086,508,3,2021-05-27,Would not recommend
+2087,510,2,2022-09-16,Amazing product
+2088,520,3,2022-01-16,Would not recommend
+2089,515,1,2022-07-02,Loved it
+2090,515,3,2021-10-12,Would not recommend
+2091,529,3,2022-12-01,Value for money
+2092,501,4,2021-03-23,Would not recommend
+2093,520,3,2022-05-29,Okayish
+2094,530,3,2022-12-10,Loved it
+2095,507,1,2022-06-07,Okayish
+2096,527,4,2022-01-21,Okayish
+2097,504,5,2022-12-08,Value for money
+2098,529,1,2022-04-16,Loved it
+2099,506,1,2021-04-29,Loved it
+2100,525,5,2022-01-31,Loved it
