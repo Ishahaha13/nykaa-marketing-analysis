@@ -36,7 +36,7 @@ The final output is a well-documented **HTML report generated using RMarkdown**.
 
 ## View Report
 
-[Click here to view the HTML report](https://yourusername.github.io/nykaa-marketing-analysis/nykaa_analysis.html)
+[Click here to view the HTML report](https://ishahaha13.github.io/nykaa-marketing-analysis/)
 
 ---
 
